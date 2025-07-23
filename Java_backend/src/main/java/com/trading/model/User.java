@@ -37,6 +37,6 @@ public class User {
         return user.getUsername() == null && user.getEmail() == null && user.getPassword() == null;
     }
     public boolean isRegistered(User user) {
-        return user.getUsername() != null && user.getEmail() != null && user.getPassword() != null;
+        return user.getUsername() != null && user.getEmail() != null && user.getPassword() != null ;
     }
 }
