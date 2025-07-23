@@ -2,7 +2,7 @@ package main.java.com.trading.model;
 
 public class User {
     private String username;
-    public String email;
+    private String email;
     private String password;
     private String balance;
     public String getBalance() {
@@ -17,19 +17,26 @@ public class User {
     public String getUsername() {
         return this.username;
     }
-    public void setUsername(String username) {
+    protected void setUsername(String username) {
         this.username = username;
     }
-    public void setEmail(String email) {
+    protected void setEmail(String email) {
         this.email = email;
     }
-    public String getPassword() {
-        return this.password;
-    }
-    public void setPassword(String password) {
+    protected void setPassword(String password) {
         this.password = password;
+    }
+    protected String getPassword() {
+        return this.password;
     }
     public boolean authentication(String email,  String password, String username ) {
         return email.equals(this.email) && password.equals(this.password) && username.equals(this.username);
+    }
+
+    public boolean isDontRegister(User user) {
+        return user.getUsername() == null && user.getEmail() == null && user.getPassword() == null;
+    }
+    public boolean isRegistered(User user) {
+        return user.getUsername() != null && user.getEmail() != null && user.getPassword() != null;
     }
 }
